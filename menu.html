@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Menu | Fifth Avenue Sushi</title>
+    <meta name="description" content="Explore the menu at Fifth Avenue Sushi in Calgary, featuring sushi, sashimi, hot dishes, and seasonal specialties." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="menu-page">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Fifth Avenue Sushi home">
+          <span>Fifth Avenue</span>
+          <span class="brand-accent">Sushi</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="menu.html" class="active">Menu</a>
+          <a href="our-chef.html">Our Chef</a>
+          <a href="our-story.html">Our Story</a>
+          <a href="karaoke.html">Karaoke</a>
+          <a href="location-hours.html">Location &amp; Hours</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            class="button button-primary"
+            href="https://fifthavenuesushi.com/?preferred_delivery=5"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Order Delivery</a
+          >
+          <a
+            class="button button-secondary"
+            href="https://fifthavenuesushi.com/?preferred_delivery=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Order Pickup</a
+          >
+          <a class="button button-ghost" href="reservations.html">Reserve a Table</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Curated Dining</p>
+          <h1>Menu</h1>
+          <p>Explore sushi, sashimi, hot dishes, lunch sets, drinks, and more. Prices are listed in CAD and may change.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <form class="menu-search" role="search">
+            <label for="menu-search-input">Find a dish</label>
+            <input id="menu-search-input" type="search" placeholder="Search the menu" autocomplete="off" aria-describedby="menu-search-status" />
+            <p class="menu-search-status" id="menu-search-status" aria-live="polite"></p>
+          </form>
+          <div class="menu-full-grid">
+            <details class="menu-category" id="sushi-rolls">
+              <summary><h2>Sushi Rolls</h2><span class="menu-category-count">10 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Spicy Salmon Roll (8 pcs) <span class="spicy-tag">Spicy</span></span><data value="18.00">$18.00</data></li>
+                <li><span>Spicy Tuna Roll (8 pcs) <span class="spicy-tag">Spicy</span></span><data value="18.00">$18.00</data></li>
+                <li><span>Salmon Roll (8 pcs)</span><data value="16.00">$16.00</data></li>
+                <li><span>Dynamite Roll (8 pcs)</span><data value="18.00">$18.00</data></li>
+                <li><span>California Roll (8 pcs)</span><data value="12.00">$12.00</data></li>
+                <li><span>Tuna Roll (8 pcs)</span><data value="16.00">$16.00</data></li>
+                <li><span>Yam Avocado Roll (8 pcs)</span><data value="15.00">$15.00</data></li>
+                <li><span>Avocado Roll (8 pcs)</span><data value="10.00">$10.00</data></li>
+                <li><span>Rainbow Roll (8 pcs)</span><data value="26.00">$26.00</data></li>
+                <li><span>Cucumber Roll (8 pcs)</span><data value="10.00">$10.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="sashimi">
+              <summary><h2>Sashimi</h2><span class="menu-category-count">9 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Ebi Sashimi (2 pcs)</span><data value="8.00">$8.00</data></li>
+                <li><span>Salmon Sashimi (2 pcs)</span><data value="8.00">$8.00</data></li>
+                <li><span>Smoked Salmon Sashimi (2 pcs)</span><data value="8.00">$8.00</data></li>
+                <li><span>Unagi Sashimi (2 pcs)</span><data value="9.00">$9.00</data></li>
+                <li><span>Tuna Sashimi (2 pcs)</span><data value="8.00">$8.00</data></li>
+                <li><span>Deluxe Sashimi (8 pcs)</span><data value="36.00">$36.00</data></li>
+                <li><span>Gunkan Crab Sashimi (2 pcs)</span><data value="12.00">$12.00</data></li>
+                <li><span>Tamago Sashimi (2 pcs)</span><data value="10.00">$10.00</data></li>
+                <li><span>Toro Sashimi (2 pcs)</span><data value="10.00">$10.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="sushi-nigiri">
+              <summary><h2>Sushi (Nigiri)</h2><span class="menu-category-count">10 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Salmon Sushi (1 pc)</span><data value="3.50">$3.50</data></li>
+                <li><span>Tuna Sushi (1 pc)</span><data value="3.50">$3.50</data></li>
+                <li><span>Smoked Salmon Sushi (1 pc)</span><data value="5.00">$5.00</data></li>
+                <li><span>Shrimp Sushi (1 pc)</span><data value="3.00">$3.00</data></li>
+                <li><span>Unagi Sushi (1 pc)</span><data value="4.50">$4.50</data></li>
+                <li><span>Gunkan Crab Sushi (1 pc)</span><data value="4.00">$4.00</data></li>
+                <li><span>Gunkan Tobiko Sushi (1 pc)</span><data value="4.00">$4.00</data></li>
+                <li><span>Deluxe Sushi (9 pcs)</span><data value="35.00">$35.00</data></li>
+                <li><span>Toro Sushi (1 pc)</span><data value="4.00">$4.00</data></li>
+                <li><span>Tamago Sushi (1 pc)</span><data value="3.00">$3.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="special-rolls">
+              <summary><h2>Special Rolls</h2><span class="menu-category-count">7 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>5th Avenue Signature Roll (8 pcs)</span><data value="30.00">$30.00</data></li>
+                <li><span>Lobster Roll (8 pcs)</span><data value="30.00">$30.00</data></li>
+                <li><span>Flying Eel Dragon Roll (8 pcs)</span><data value="26.00">$26.00</data></li>
+                <li><span>Red Smoked Dragon Roll (8 pcs)</span><data value="26.00">$26.00</data></li>
+                <li><span>Crispy Beef Roll (8 pcs)</span><data value="22.00">$22.00</data></li>
+                <li><span>Crispy California Roll (8 pcs)</span><data value="16.00">$16.00</data></li>
+                <li><span>Philadelphia Roll (8 pcs)</span><data value="18.00">$18.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="mains">
+              <summary><h2>Mains</h2><span class="menu-category-count">4 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Poke Bowl</span><data value="26.00">$26.00</data></li>
+                <li><span>Unagi Don</span><data value="26.00">$26.00</data></li>
+                <li><span>Karaage Don</span><data value="20.00">$20.00</data></li>
+                <li><span>Izakaya Pork Sisig</span><data value="25.00">$25.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="rice-vegetable-plates">
+              <summary><h2>Mains — Rice &amp; Vegetable Plates</h2><span class="menu-category-count">7 items</span></summary>
+              <p class="menu-category-note">Served with rice and mixed vegetables. Add chili oil on the side for $1.</p>
+              <ul class="menu-price-list">
+                <li><span>Wafu Bifu NY Steak (7 oz)</span><data value="46.00">$46.00</data></li>
+                <li><span>Teppanyaki NY Steak (7 oz)</span><data value="40.00">$40.00</data></li>
+                <li><span>Teriyaki Salmon</span><data value="30.00">$30.00</data></li>
+                <li><span>Lemon Garlic Snapper</span><data value="26.00">$26.00</data></li>
+                <li><span>Kakuni Braised Pork</span><data value="26.00">$26.00</data></li>
+                <li><span>Teriyaki Chicken</span><data value="22.00">$22.00</data></li>
+                <li><span>Pork Tonkatsu</span><data value="24.00">$24.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="ramen">
+              <summary><h2>Ramen</h2><span class="menu-category-count">4 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Shoyu Ramen <span class="menu-item-note">Choose chicken, beef, pork, or tofu</span></span><data value="28.00">$28.00</data></li>
+                <li><span>Miso Ramen <span class="menu-item-note">Choose chicken, beef, pork, or tofu</span></span><data value="28.00">$28.00</data></li>
+                <li><span>Spicy Miso Ramen <span class="spicy-tag">Spicy</span></span><data value="29.00">$29.00</data></li>
+                <li><span>Spicy Shoyu Ramen <span class="spicy-tag">Spicy</span></span><data value="29.00">$29.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="appetizers">
+              <summary><h2>Appetizers</h2><span class="menu-category-count">22 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Edamame</span><data value="8.00">$8.00</data></li>
+                <li><span>Takoyaki (5 pcs)</span><data value="9.00">$9.00</data></li>
+                <li><span>Calamari</span><data value="12.00">$12.00</data></li>
+                <li><span>Crispy Shrimp (5 pcs)</span><data value="15.00">$15.00</data></li>
+                <li><span>Agedashi Tofu</span><data value="10.00">$10.00</data></li>
+                <li><span>Chicken Karaage</span><data value="12.00">$12.00</data></li>
+                <li><span>Yakitori Chicken</span><data value="12.00">$12.00</data></li>
+                <li><span>Pork Kakuni</span><data value="12.00">$12.00</data></li>
+                <li><span>Tuna Tataki</span><data value="24.00">$24.00</data></li>
+                <li><span>Shrimp Tempura (6 pcs)</span><data value="14.00">$14.00</data></li>
+                <li><span>Vegetable Tempura</span><data value="10.00">$10.00</data></li>
+                <li><span>Yam Tempura</span><data value="10.00">$10.00</data></li>
+                <li><span>Gyoza AAA Alberta Beef (5 pcs)</span><data value="12.00">$12.00</data></li>
+                <li><span>House / Seaweed Salad</span><data value="8.00">$8.00</data></li>
+                <li><span>Pickled Cucumbers</span><data value="8.00">$8.00</data></li>
+                <li><span>Beef Tataki (Tartar)</span><data value="28.00">$28.00</data></li>
+                <li><span>BBQ Squid</span><data value="18.00">$18.00</data></li>
+                <li><span>Veggie Spring Rolls (4 pcs)</span><data value="8.00">$8.00</data></li>
+                <li><span>Pork Spring Rolls (4 pcs)</span><data value="10.00">$10.00</data></li>
+                <li><span>Garlic Butter Mussels (6 pcs)</span><data value="16.00">$16.00</data></li>
+                <li><span>Fried Party Plate</span><data value="50.00">$50.00</data></li>
+                <li><span>Miso Soup</span><data value="4.00">$4.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="stir-fry">
+              <summary><h2>Stir-Fry &amp; Noodles</h2><span class="menu-category-count">3 items</span></summary>
+              <p class="menu-category-note">Choose yakisoba or udon noodles.</p>
+              <ul class="menu-price-list">
+                <li><span>Chicken Stir-Fry</span><data value="24.00">$24.00</data></li>
+                <li><span>Beef or Shrimp Stir-Fry</span><data value="26.00">$26.00</data></li>
+                <li><span>Vegetable Stir-Fry</span><data value="20.00">$20.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="rice">
+              <summary><h2>Rice</h2><span class="menu-category-count">2 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Steamed Rice (1 cup)</span><data value="4.00">$4.00</data></li>
+                <li><span>Yakimeshi Rice</span><data value="18.00">$18.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="lunch">
+              <summary><h2>Lunch — Bento Box</h2><span class="menu-category-count">2 items</span></summary>
+              <p class="menu-category-note">Available at lunch only.</p>
+              <ul class="menu-price-list">
+                <li><span>Bento Plate A</span><data value="30.00">$30.00</data></li>
+                <li><span>Bento Plate B</span><data value="35.00">$35.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="party-trays">
+              <summary><h2>Party Trays</h2><span class="menu-category-count">2 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Platter A (40 pcs)</span><data value="69.00">$69.00</data></li>
+                <li><span>Platter B (44 pcs)</span><data value="99.00">$99.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="desserts">
+              <summary><h2>Desserts</h2><span class="menu-category-count">1 item</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Ice Cream (2 big scoops)</span><data value="7.00">$7.00</data></li>
+              </ul>
+              <p class="menu-category-note">Ask your server for available flavours.</p>
+            </details>
+
+            <details class="menu-category" id="drinks">
+              <summary><h2>Drinks</h2><span class="menu-category-count">4 options</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Soda <span class="menu-item-note">Coke, Sprite, or ginger ale</span></span><data value="3.00">$3.00</data></li>
+                <li><span>Juice <span class="menu-item-note">Cranberry, orange, or iced tea</span></span><data value="3.00">$3.00</data></li>
+                <li><span>Hot Tea</span><data value="3.00">$3.00</data></li>
+                <li><span>Bubble Tea <span class="menu-item-note">Matcha or Thai</span></span><data value="7.00">$7.00</data></li>
+              </ul>
+            </details>
+
+            <details class="menu-category" id="alcohol">
+              <summary><h2>Alcohol</h2><span class="menu-category-count">7 items</span></summary>
+              <ul class="menu-price-list">
+                <li><span>Asahi (500 ml, 5%)</span><data value="11.00">$11.00</data></li>
+                <li><span>Sapporo (500 ml, 5%)</span><data value="11.00">$11.00</data></li>
+                <li><span>Heineken (330 ml, 5%)</span><data value="8.00">$8.00</data></li>
+                <li><span>Corona (330 ml, 4.6%)</span><data value="8.00">$8.00</data></li>
+                <li><span>Wine (6 oz) <span class="menu-item-note">Red or white</span></span><data value="8.00">$8.00</data></li>
+                <li><span>High Ball (1 oz)</span><data value="8.00">$8.00</data></li>
+                <li><span>Sake (2 oz)</span><data value="8.00">$8.00</data></li>
+              </ul>
+            </details>
+          </div>
+          <p class="menu-source-note">Menu and prices transcribed from the restaurant’s menu pages. Prices may change; confirm with the restaurant when ordering.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-block">
+          <a href="index.html" class="brand footer-brand" aria-label="Fifth Avenue Sushi home">
+            <span>Fifth Avenue</span>
+            <span class="brand-accent">Sushi</span>
+          </a>
+          <p>118A 5th Ave SE, Calgary, AB T2G 0E2</p>
+          <p><a href="tel:+18252059668">(825) 205-9668</a></p>
+          <p><a href="mailto:fifthavenuesushi@gmail.com">fifthavenuesushi@gmail.com</a></p>
+          <p><a href="#">Instagram → @fifthavenuesushi</a></p>
+          <p><a href="#">TikTok → @fifthavenuesushi</a></p>
+        </div>
+        <div class="footer-block">
+          <h3>Dine</h3>
+          <a href="menu.html">Full Menu</a>
+          <a href="menu.html">Sushi &amp; Sashimi</a>
+          <a href="menu.html">Sushi Bar &amp; Specials</a>
+          <a href="menu.html">Kitchen &amp; Hot Dishes</a>
+          <a href="menu.html">Drinks &amp; Sake</a>
+          <a href="menu.html">Lunch</a>
+          <a href="menu.html">Dessert</a>
+        </div>
+        <div class="footer-block">
+          <h3>About</h3>
+          <a href="our-chef.html">Our Chef</a>
+          <a href="our-story.html">Our Story</a>
+          <a href="karaoke.html">Karaoke</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-block">
+          <h3>Visit</h3>
+          <a href="reservations.html">Reservations</a>
+          <a href="location-hours.html">Location &amp; Hours</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>118A 5th Ave SE, Calgary, AB T2G 0E2 · (825) 205-9668</p>
+          <p>© 2026 Fifth Avenue Sushi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Reservations | Fifth Avenue Sushi</title>
+    <meta name="description" content="Reserve a table at Fifth Avenue Sushi in Calgary and plan your next elevated Japanese dining experience." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Fifth Avenue Sushi home">
+          <span>Fifth Avenue</span>
+          <span class="brand-accent">Sushi</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="menu.html">Menu</a>
+          <a href="our-chef.html">Our Chef</a>
+          <a href="our-story.html">Our Story</a>
+          <a href="karaoke.html">Karaoke</a>
+          <a href="location-hours.html">Location &amp; Hours</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="button button-primary" href="https://fifthavenuesushi.com/?preferred_delivery=5" target="_blank" rel="noopener noreferrer">Order Delivery</a>
+          <a class="button button-secondary" href="https://fifthavenuesushi.com/?preferred_delivery=1" target="_blank" rel="noopener noreferrer">Order Pickup</a>
+          <a class="button button-ghost" href="reservations.html">Reserve a Table</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Reservations</p>
+          <h1>Reserve your table for an elevated evening.</h1>
+          <p>Whether it is a casual lunch or a special dinner, we look forward to welcoming you for an unforgettable Japanese dining experience.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container form-layout">
+          <article class="contact-card">
+            <p class="eyebrow">Plan Your Visit</p>
+            <h2>Fifth Avenue Sushi</h2>
+            <p>118A 5th Ave SE, Calgary, AB T2G 0E2</p>
+            <ul class="contact-list">
+              <li><strong>Call:</strong> <a href="tel:+18252059668">(825) 205-9668</a></li>
+              <li><strong>Email:</strong> <a href="mailto:fifthavenuesushi@gmail.com">fifthavenuesushi@gmail.com</a></li>
+              <li><strong>Instagram:</strong> <a href="#">@fifthavenuesushi</a></li>
+            </ul>
+          </article>
+
+          <article class="form-card">
+            <h2>Request a reservation</h2>
+            <form>
+              <div class="form-grid">
+                <label>
+                  First Name
+                  <input type="text" name="firstName" placeholder="Your first name" />
+                </label>
+                <label>
+                  Last Name
+                  <input type="text" name="lastName" placeholder="Your last name" />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" />
+                </label>
+                <label>
+                  Phone
+                  <input type="tel" name="phone" placeholder="(555) 123-4567" />
+                </label>
+                <label class="full">
+                  Date
+                  <input type="date" name="date" />
+                </label>
+                <label>
+                  Time
+                  <select name="time">
+                    <option>6:00 PM</option>
+                    <option>6:30 PM</option>
+                    <option>7:00 PM</option>
+                    <option>7:30 PM</option>
+                    <option>8:00 PM</option>
+                    <option>8:30 PM</option>
+                  </select>
+                </label>
+                <label>
+                  Guests
+                  <select name="guests">
+                    <option>2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4 Guests</option>
+                    <option>5 Guests</option>
+                    <option>6 Guests</option>
+                  </select>
+                </label>
+                <label class="full">
+                  Notes
+                  <textarea name="notes" placeholder="Any special requests or occasion details?"></textarea>
+                </label>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="button button-primary">Send Request</button>
+              </div>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-block">
+          <a href="index.html" class="brand footer-brand" aria-label="Fifth Avenue Sushi home">
+            <span>Fifth Avenue</span>
+            <span class="brand-accent">Sushi</span>
+          </a>
+          <p>118A 5th Ave SE, Calgary, AB T2G 0E2</p>
+          <p><a href="tel:+18252059668">(825) 205-9668</a></p>
+          <p><a href="mailto:fifthavenuesushi@gmail.com">fifthavenuesushi@gmail.com</a></p>
+          <p><a href="#">Instagram → @fifthavenuesushi</a></p>
+          <p><a href="#">TikTok → @fifthavenuesushi</a></p>
+        </div>
+        <div class="footer-block">
+          <h3>Dine</h3>
+          <a href="menu.html">Full Menu</a>
+          <a href="menu.html">Sushi &amp; Sashimi</a>
+          <a href="menu.html">Sushi Bar &amp; Specials</a>
+          <a href="menu.html">Kitchen &amp; Hot Dishes</a>
+          <a href="menu.html">Drinks &amp; Sake</a>
+          <a href="menu.html">Lunch</a>
+          <a href="menu.html">Dessert</a>
+        </div>
+        <div class="footer-block">
+          <h3>About</h3>
+          <a href="our-chef.html">Our Chef</a>
+          <a href="our-story.html">Our Story</a>
+          <a href="karaoke.html">Karaoke</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-block">
+          <h3>Visit</h3>
+          <a href="reservations.html">Reservations</a>
+          <a href="location-hours.html">Location &amp; Hours</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>118A 5th Ave SE, Calgary, AB T2G 0E2 · (825) 205-9668</p>
+          <p>© 2026 Fifth Avenue Sushi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
