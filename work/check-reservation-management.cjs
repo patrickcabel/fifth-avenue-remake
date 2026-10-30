@@ -1,0 +1,35 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {ServiceStore}=require('../service-store.cjs');
+const {reservationSummary}=require('../reservation-vapi.cjs');
+const {buildArrivalSeries}=require('../activity-chart.js');
+const dir=fs.mkdtempSync(path.join(__dirname,'store-test-management-'));
+try{
+  const file=path.join(dir,'requests.json'),store=new ServiceStore(file);
+  const date=new Date(Date.now()+7*86400000).toISOString().slice(0,10);
+  const input={type:'reservation',name:'Test Guest',phone:'4035550101',date,time:'18:00',guests:4,note:'Window',source:'staff',confirmed:true};
+  const original=store.create(input);
+  const edited=store.update(original.id,{...input,action:'edit_reservation',revision:1,time:'19:00',guests:6,note:'Birthday'});
+  assert.equal(edited.status,'confirmed');assert.equal(edited.guests,6);assert.equal(edited.time,'19:00');
+  assert.equal(edited.events.at(-1).before.guests,4);assert.equal(edited.events.at(-1).after.guests,6);
+  assert.throws(()=>store.update(original.id,{...input,action:'edit_reservation',revision:1}),/Another staff/);
+  assert.throws(()=>store.update(original.id,{...input,action:'edit_reservation',revision:2,guests:0}),/party size/);
+  assert.throws(()=>store.update(original.id,{...input,action:'edit_reservation',revision:2,date:'2000-01-01'}),/future/);
+  assert.throws(()=>store.update(original.id,{action:'no_show',revision:2}),/scheduled time/);
+  const arrived=store.update(original.id,{action:'arrive',revision:2});
+  assert.equal(arrived.status,'arrived');assert.match(reservationSummary(arrived).customerMessage,/arrived/);
+  assert.equal(buildArrivalSeries(store.list(),date).hours[19].confirmed,6);
+  assert.throws(()=>store.update(original.id,{...input,action:'edit_reservation',revision:3}),/not available/);
+  const pending=store.create({...input,confirmed:false});
+  assert.throws(()=>store.update(pending.id,{action:'arrive',revision:1}),/not available/);
+  assert.throws(()=>store.update(pending.id,{action:'cancel_reservation',revision:1,reason:' '}),/reason/);
+  const cancelled=store.update(pending.id,{action:'cancel_reservation',revision:1,reason:'Guest called to cancel'});
+  assert.equal(cancelled.status,'cancelled');
+  assert.match(reservationSummary(cancelled).customerMessage,/Guest called to cancel/);
+  assert.equal(buildArrivalSeries([cancelled],date).hours[19].confirmed,0);
+  const past=store.create(input);
+  const records=store.list();records.find(r=>r.id===past.id).date='2020-01-01';store.commit(records);
+  const missed=store.update(past.id,{action:'no_show',revision:1});
+  assert.equal(missed.status,'no_show');assert.match(reservationSummary(missed).customerMessage,/no-show/);
+  assert.equal(new ServiceStore(file).list().find(r=>r.id===original.id).status,'arrived');
+  console.log('PASS: reservation edits, audit history, conflicts, cancellation reason, arrival, no-show timing, graph totals, voice summaries, persistence');
+}finally{fs.rmSync(dir,{recursive:true,force:true});}

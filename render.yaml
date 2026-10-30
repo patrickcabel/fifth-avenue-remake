@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: fifth-avenue-demo
+    runtime: docker
+    plan: free
+    branch: demo/first-build-2026-10-30
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: BIND_HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: DATA_FILE
+        value: /data/requests.json
+      - key: BACKUP_DIR
+        value: /data/demo-backups
+      - key: DEMO_PASSWORD
+        sync: false
+      - key: DEMO_MANAGER_NAME
+        value: Demo Manager
+      - key: DEMO_MANAGER_CODE
+        sync: false
+      - key: DEMO_MANAGER_PIN
+        sync: false
+      - key: VAPI_WEBHOOK_SECRET
+        sync: false

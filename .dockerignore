@@ -1,0 +1,10 @@
+.git
+node_modules
+outputs
+work/data
+work/*.log
+work/store-test-*
+.env
+.env.*
+
+backups/

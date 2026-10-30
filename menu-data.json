@@ -1,0 +1,611 @@
+[
+  {
+    "id": "sushi-rolls-1",
+    "category": "Sushi Rolls",
+    "name": "Spicy Salmon Roll (8 pcs)",
+    "price": 1800,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-2",
+    "category": "Sushi Rolls",
+    "name": "Spicy Tuna Roll (8 pcs)",
+    "price": 1800,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-3",
+    "category": "Sushi Rolls",
+    "name": "Salmon Roll (8 pcs)",
+    "price": 1600,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-4",
+    "category": "Sushi Rolls",
+    "name": "Dynamite Roll (8 pcs)",
+    "price": 1800,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-5",
+    "category": "Sushi Rolls",
+    "name": "California Roll (8 pcs)",
+    "price": 1200,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-6",
+    "category": "Sushi Rolls",
+    "name": "Tuna Roll (8 pcs)",
+    "price": 1600,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-7",
+    "category": "Sushi Rolls",
+    "name": "Yam Avocado Roll (8 pcs)",
+    "price": 1500,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-8",
+    "category": "Sushi Rolls",
+    "name": "Avocado Roll (8 pcs)",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-9",
+    "category": "Sushi Rolls",
+    "name": "Rainbow Roll (8 pcs)",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "sushi-rolls-10",
+    "category": "Sushi Rolls",
+    "name": "Cucumber Roll (8 pcs)",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "sashimi-1",
+    "category": "Sashimi",
+    "name": "Ebi Sashimi (2 pcs)",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "sashimi-2",
+    "category": "Sashimi",
+    "name": "Salmon Sashimi (2 pcs)",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "sashimi-3",
+    "category": "Sashimi",
+    "name": "Smoked Salmon Sashimi (2 pcs)",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "sashimi-4",
+    "category": "Sashimi",
+    "name": "Unagi Sashimi (2 pcs)",
+    "price": 900,
+    "available": true
+  },
+  {
+    "id": "sashimi-5",
+    "category": "Sashimi",
+    "name": "Tuna Sashimi (2 pcs)",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "sashimi-6",
+    "category": "Sashimi",
+    "name": "Deluxe Sashimi (8 pcs)",
+    "price": 3600,
+    "available": true
+  },
+  {
+    "id": "sashimi-7",
+    "category": "Sashimi",
+    "name": "Gunkan Crab Sashimi (2 pcs)",
+    "price": 1200,
+    "available": true
+  },
+  {
+    "id": "sashimi-8",
+    "category": "Sashimi",
+    "name": "Tamago Sashimi (2 pcs)",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "sashimi-9",
+    "category": "Sashimi",
+    "name": "Toro Sashimi (2 pcs)",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-1",
+    "category": "Sushi (Nigiri)",
+    "name": "Salmon Sushi (1 pc)",
+    "price": 350,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-2",
+    "category": "Sushi (Nigiri)",
+    "name": "Tuna Sushi (1 pc)",
+    "price": 350,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-3",
+    "category": "Sushi (Nigiri)",
+    "name": "Smoked Salmon Sushi (1 pc)",
+    "price": 500,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-4",
+    "category": "Sushi (Nigiri)",
+    "name": "Shrimp Sushi (1 pc)",
+    "price": 300,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-5",
+    "category": "Sushi (Nigiri)",
+    "name": "Unagi Sushi (1 pc)",
+    "price": 450,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-6",
+    "category": "Sushi (Nigiri)",
+    "name": "Gunkan Crab Sushi (1 pc)",
+    "price": 400,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-7",
+    "category": "Sushi (Nigiri)",
+    "name": "Gunkan Tobiko Sushi (1 pc)",
+    "price": 400,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-8",
+    "category": "Sushi (Nigiri)",
+    "name": "Deluxe Sushi (9 pcs)",
+    "price": 3500,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-9",
+    "category": "Sushi (Nigiri)",
+    "name": "Toro Sushi (1 pc)",
+    "price": 400,
+    "available": true
+  },
+  {
+    "id": "sushi-nigiri-10",
+    "category": "Sushi (Nigiri)",
+    "name": "Tamago Sushi (1 pc)",
+    "price": 300,
+    "available": true
+  },
+  {
+    "id": "special-rolls-1",
+    "category": "Special Rolls",
+    "name": "5th Avenue Signature Roll (8 pcs)",
+    "price": 3000,
+    "available": true
+  },
+  {
+    "id": "special-rolls-2",
+    "category": "Special Rolls",
+    "name": "Lobster Roll (8 pcs)",
+    "price": 3000,
+    "available": true
+  },
+  {
+    "id": "special-rolls-3",
+    "category": "Special Rolls",
+    "name": "Flying Eel Dragon Roll (8 pcs)",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "special-rolls-4",
+    "category": "Special Rolls",
+    "name": "Red Smoked Dragon Roll (8 pcs)",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "special-rolls-5",
+    "category": "Special Rolls",
+    "name": "Crispy Beef Roll (8 pcs)",
+    "price": 2200,
+    "available": true
+  },
+  {
+    "id": "special-rolls-6",
+    "category": "Special Rolls",
+    "name": "Crispy California Roll (8 pcs)",
+    "price": 1600,
+    "available": true
+  },
+  {
+    "id": "special-rolls-7",
+    "category": "Special Rolls",
+    "name": "Philadelphia Roll (8 pcs)",
+    "price": 1800,
+    "available": true
+  },
+  {
+    "id": "mains-1",
+    "category": "Mains",
+    "name": "Poke Bowl",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "mains-2",
+    "category": "Mains",
+    "name": "Unagi Don",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "mains-3",
+    "category": "Mains",
+    "name": "Karaage Don",
+    "price": 2000,
+    "available": true
+  },
+  {
+    "id": "mains-4",
+    "category": "Mains",
+    "name": "Izakaya Pork Sisig",
+    "price": 2500,
+    "available": true
+  },
+  {
+    "id": "rice-vegetable-plates-1",
+    "category": "Mains — Rice & Vegetable Plates",
+    "name": "Wafu Bifu NY Steak (7 oz)",
+    "price": 4600,
+    "available": true
+  },
+  {
+    "id": "rice-vegetable-plates-2",
+    "category": "Mains — Rice & Vegetable Plates",
+    "name": "Teppanyaki NY Steak (7 oz)",
+    "price": 4000,
+    "available": true
+  },
+  {
+    "id": "rice-vegetable-plates-3",
+    "category": "Mains — Rice & Vegetable Plates",
+    "name": "Teriyaki Salmon",
+    "price": 3000,
+    "available": true
+  },
+  {
+    "id": "rice-vegetable-plates-4",
+    "category": "Mains — Rice & Vegetable Plates",
+    "name": "Lemon Garlic Snapper",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "rice-vegetable-plates-5",
+    "category": "Mains — Rice & Vegetable Plates",
+    "name": "Kakuni Braised Pork",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "rice-vegetable-plates-6",
+    "category": "Mains — Rice & Vegetable Plates",
+    "name": "Teriyaki Chicken",
+    "price": 2200,
+    "available": true
+  },
+  {
+    "id": "rice-vegetable-plates-7",
+    "category": "Mains — Rice & Vegetable Plates",
+    "name": "Pork Tonkatsu",
+    "price": 2400,
+    "available": true
+  },
+  {
+    "id": "ramen-1",
+    "category": "Ramen",
+    "name": "Shoyu Ramen Choose chicken, beef, pork, or tofu",
+    "price": 2800,
+    "available": true
+  },
+  {
+    "id": "ramen-2",
+    "category": "Ramen",
+    "name": "Miso Ramen Choose chicken, beef, pork, or tofu",
+    "price": 2800,
+    "available": true
+  },
+  {
+    "id": "ramen-3",
+    "category": "Ramen",
+    "name": "Spicy Miso Ramen",
+    "price": 2900,
+    "available": true
+  },
+  {
+    "id": "ramen-4",
+    "category": "Ramen",
+    "name": "Spicy Shoyu Ramen",
+    "price": 2900,
+    "available": true
+  },
+  {
+    "id": "appetizers-1",
+    "category": "Appetizers",
+    "name": "Edamame",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "appetizers-2",
+    "category": "Appetizers",
+    "name": "Takoyaki (5 pcs)",
+    "price": 900,
+    "available": true
+  },
+  {
+    "id": "appetizers-3",
+    "category": "Appetizers",
+    "name": "Calamari",
+    "price": 1200,
+    "available": true
+  },
+  {
+    "id": "appetizers-4",
+    "category": "Appetizers",
+    "name": "Crispy Shrimp (5 pcs)",
+    "price": 1500,
+    "available": true
+  },
+  {
+    "id": "appetizers-5",
+    "category": "Appetizers",
+    "name": "Agedashi Tofu",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "appetizers-6",
+    "category": "Appetizers",
+    "name": "Chicken Karaage",
+    "price": 1200,
+    "available": true
+  },
+  {
+    "id": "appetizers-7",
+    "category": "Appetizers",
+    "name": "Yakitori Chicken",
+    "price": 1200,
+    "available": true
+  },
+  {
+    "id": "appetizers-8",
+    "category": "Appetizers",
+    "name": "Pork Kakuni",
+    "price": 1200,
+    "available": true
+  },
+  {
+    "id": "appetizers-9",
+    "category": "Appetizers",
+    "name": "Tuna Tataki",
+    "price": 2400,
+    "available": true
+  },
+  {
+    "id": "appetizers-10",
+    "category": "Appetizers",
+    "name": "Shrimp Tempura (6 pcs)",
+    "price": 1400,
+    "available": true
+  },
+  {
+    "id": "appetizers-11",
+    "category": "Appetizers",
+    "name": "Vegetable Tempura",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "appetizers-12",
+    "category": "Appetizers",
+    "name": "Yam Tempura",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "appetizers-13",
+    "category": "Appetizers",
+    "name": "Gyoza AAA Alberta Beef (5 pcs)",
+    "price": 1200,
+    "available": true
+  },
+  {
+    "id": "appetizers-14",
+    "category": "Appetizers",
+    "name": "House / Seaweed Salad",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "appetizers-15",
+    "category": "Appetizers",
+    "name": "Pickled Cucumbers",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "appetizers-16",
+    "category": "Appetizers",
+    "name": "Beef Tataki (Tartar)",
+    "price": 2800,
+    "available": true
+  },
+  {
+    "id": "appetizers-17",
+    "category": "Appetizers",
+    "name": "BBQ Squid",
+    "price": 1800,
+    "available": true
+  },
+  {
+    "id": "appetizers-18",
+    "category": "Appetizers",
+    "name": "Veggie Spring Rolls (4 pcs)",
+    "price": 800,
+    "available": true
+  },
+  {
+    "id": "appetizers-19",
+    "category": "Appetizers",
+    "name": "Pork Spring Rolls (4 pcs)",
+    "price": 1000,
+    "available": true
+  },
+  {
+    "id": "appetizers-20",
+    "category": "Appetizers",
+    "name": "Garlic Butter Mussels (6 pcs)",
+    "price": 1600,
+    "available": true
+  },
+  {
+    "id": "appetizers-21",
+    "category": "Appetizers",
+    "name": "Fried Party Plate",
+    "price": 5000,
+    "available": true
+  },
+  {
+    "id": "appetizers-22",
+    "category": "Appetizers",
+    "name": "Miso Soup",
+    "price": 400,
+    "available": true
+  },
+  {
+    "id": "stir-fry-1",
+    "category": "Stir-Fry & Noodles",
+    "name": "Chicken Stir-Fry",
+    "price": 2400,
+    "available": true
+  },
+  {
+    "id": "stir-fry-2",
+    "category": "Stir-Fry & Noodles",
+    "name": "Beef or Shrimp Stir-Fry",
+    "price": 2600,
+    "available": true
+  },
+  {
+    "id": "stir-fry-3",
+    "category": "Stir-Fry & Noodles",
+    "name": "Vegetable Stir-Fry",
+    "price": 2000,
+    "available": true
+  },
+  {
+    "id": "rice-1",
+    "category": "Rice",
+    "name": "Steamed Rice (1 cup)",
+    "price": 400,
+    "available": true
+  },
+  {
+    "id": "rice-2",
+    "category": "Rice",
+    "name": "Yakimeshi Rice",
+    "price": 1800,
+    "available": true
+  },
+  {
+    "id": "lunch-1",
+    "category": "Lunch — Bento Box",
+    "name": "Bento Plate A",
+    "price": 3000,
+    "available": true
+  },
+  {
+    "id": "lunch-2",
+    "category": "Lunch — Bento Box",
+    "name": "Bento Plate B",
+    "price": 3500,
+    "available": true
+  },
+  {
+    "id": "party-trays-1",
+    "category": "Party Trays",
+    "name": "Platter A (40 pcs)",
+    "price": 6900,
+    "available": true
+  },
+  {
+    "id": "party-trays-2",
+    "category": "Party Trays",
+    "name": "Platter B (44 pcs)",
+    "price": 9900,
+    "available": true
+  },
+  {
+    "id": "desserts-1",
+    "category": "Desserts",
+    "name": "Ice Cream (2 big scoops)",
+    "price": 700,
+    "available": true
+  },
+  {
+    "id": "drinks-1",
+    "category": "Drinks",
+    "name": "Soda Coke, Sprite, or ginger ale",
+    "price": 300,
+    "available": true
+  },
+  {
+    "id": "drinks-2",
+    "category": "Drinks",
+    "name": "Juice Cranberry, orange, or iced tea",
+    "price": 300,
+    "available": true
+  },
+  {
+    "id": "drinks-3",
+    "category": "Drinks",
+    "name": "Hot Tea",
+    "price": 300,
+    "available": true
+  },
+  {
+    "id": "drinks-4",
+    "category": "Drinks",
+    "name": "Bubble Tea Matcha or Thai",
+    "price": 700,
+    "available": true
+  }
+]
