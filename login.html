@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staff sign-in · Fifth Avenue Sushi</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="dashboard.css"><script src="login.js" defer></script></head>
+<body class="login-page">
+  <main class="login-card">
+    <a class="brand" href="index.html">Fifth Avenue<span>SUSHI / STAFF ACCESS</span></a>
+    <p class="eyebrow">WELCOME TO THE SERVICE DESK</p><h1 id="login-heading">Staff sign-in</h1>
+    <p id="login-description" class="note">Checking your local workspace…</p>
+    <form id="login-form">
+      <label id="setup-name" hidden>Your name<input name="displayName" maxlength="100" autocomplete="name"></label>
+      <div id="employee-fields">
+        <label>Employee code<input name="code" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" required autocomplete="username" placeholder="4 digits"></label>
+        <label>PIN<input name="pin" type="password" inputmode="numeric" pattern="[0-9]{3}" minlength="3" maxlength="3" required autocomplete="current-password" placeholder="3 digits"></label>
+      </div>
+      <div id="legacy-fields" hidden>
+        <label>Previous manager username<input name="username" maxlength="50" autocomplete="username" disabled></label>
+        <label>Previous manager password<input name="password" type="password" maxlength="128" autocomplete="current-password" disabled></label>
+      </div>
+      <p id="login-error" role="alert"></p>
+      <button id="login-submit" class="primary" type="submit" disabled>Sign in</button>
+    </form>
+    <button id="legacy-login" type="button" class="secondary" hidden>Use previous manager login</button>
+    <p class="note">This staff account is stored on your local backend. Vapi uses a separate credential.</p>
+  </main>
+</body></html>

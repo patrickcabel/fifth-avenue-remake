@@ -1,0 +1,9 @@
+{
+  "name": "fifth-avenue-remake",
+  "private": true,
+  "scripts": {
+    "dev": "node work/preview.cjs",
+    "test": "node work/check-store.cjs && node work/check-vapi.cjs && node work/check-activity.cjs && node work/check-reservation-vapi.cjs && node work/check-reservation-management.cjs && node work/check-auth.cjs && node work/check-reservation-rules.cjs && node work/check-service-updates.cjs && node work/check-backups.cjs && node work/check-request-alerts.cjs && node work/check-staff-codes.cjs && node work/check-manager-recovery.cjs && node work/check-hosting.cjs",
+    "start": "node work/preview.cjs"
+  }
+}

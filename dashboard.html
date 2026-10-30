@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Service desk · Fifth Avenue Sushi</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="staff-session.js" defer></script>
+  <script src="staff-accounts.js" defer></script>
+  <script src="backup-status.js" defer></script>
+  <script src="service-updates.js" defer></script>
+  <script src="request-alerts.js" defer></script>
+  <script src="reservation-default-hours.js" defer></script>
+  <script src="reservation-settings.js" defer></script>
+  <script src="dashboard.js" defer></script>
+  <script src="order-entry.js" defer></script>
+  <script src="menu-availability.js" defer></script>
+  <script src="pickup-status.js" defer></script>
+  <script src="reservation-entry.js" defer></script>
+  <script src="activity-chart.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="index.html">Fifth Avenue<span>SUSHI / SERVICE DESK</span></a>
+    <div class="venue"><span class="dot"></span> Calgary · Main restaurant</div>
+    <nav aria-label="Service queues">
+      <button class="nav active" data-view="all">All requests <span id="all-count">0</span></button>
+      <button class="nav" data-view="order">Pickup orders <span id="order-count">0</span></button>
+      <button class="nav" data-view="reservation">Reservations <span id="reservation-count">0</span></button>
+      <button class="nav" data-view="history">History <span>↗</span></button>
+    </nav>
+    <div class="sidebar-bottom"><p>FRONT OF HOUSE</p><strong>A little more hospitality.<br>A little less phone tag.</strong><a href="index.html">View restaurant website ↗</a></div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">FIFTH AVENUE / OPERATIONS</p><h1>Service desk</h1><p class="subtitle">Pickup orders and reservations, in one place.</p><p id="connection" class="meta" role="status">Connecting to local server…</p></div><div class="header-controls"><button id="backup-button" class="secondary">Backups</button><span id="staff-identity" class="meta"></span><button id="staff-accounts-button" class="secondary" hidden>Staff accounts</button><button id="staff-logout" class="secondary">Sign out</button><button id="reservation-settings-button" class="secondary">Reservation settings</button><button id="manage-menu" class="secondary">Menu availability</button><button id="enable-notifications" class="secondary">Enable browser notifications</button><button id="sound" class="secondary" aria-pressed="true">Chime on · Mute</button></div></header>
+    <div class="demo-banner"><span><strong>Demo workspace</strong> · Requests are simulated and saved on this computer. No customers are contacted.</span><button id="simulate">+ Simulate incoming request</button></div>
+    <div class="pickup-service"><span id="pickup-status-text" role="status">Checking pickup service…</span><button id="toggle-pickup" class="secondary" disabled>Pause pickup orders</button></div>
+    <section id="request-alert-banner" class="request-alert-banner" hidden aria-label="Requests awaiting a decision"><div><strong id="request-alert-count"></strong><p id="request-alert-status" class="note"></p></div><div class="header-controls"><button id="review-requests" class="primary">Review requests</button><button id="snooze-alerts" class="secondary">Snooze 5 min</button></div></section>
+    <section class="stats" aria-label="Queue summary">
+      <article><span>Needs attention</span><strong id="pending-stat">0</strong><small>Waiting for your decision</small></article>
+      <article><span>Active pickup orders</span><strong id="active-stat">0</strong><small>Preparing or ready for collection</small></article>
+      <article><span>Confirmed reservations</span><strong id="reservation-stat">0</strong><small>Upcoming demo bookings</small></article>
+    </section>
+    <section id="activity-panel" class="activity-panel" aria-labelledby="activity-heading">
+      <div class="activity-heading"><div><p class="eyebrow">PLAN THE SERVICE</p><h2 id="activity-heading">Expected guest arrivals</h2><p class="note">Reservation guests arriving each hour · Calgary time</p></div>
+        <div class="activity-controls"><button id="activity-prev" class="secondary" aria-label="Previous day">←</button><label><span class="sr-only">Reservation date</span><input id="activity-date" type="date" required></label><button id="activity-next" class="secondary" aria-label="Next day">→</button><button id="activity-today" class="secondary">Today</button></div>
+      </div>
+      <div class="activity-metrics"><div><strong id="activity-guests">0</strong><span>confirmed guests</span></div><div><strong id="activity-bookings">0</strong><span>confirmed bookings</span></div><div><strong id="activity-peak">—</strong><span>busiest arrival hour · confirmed</span></div></div>
+      <div class="activity-legend"><span><i class="confirmed-key"></i>Confirmed</span><span><i class="pending-key"></i>Pending requests</span><label><input id="activity-pending" type="checkbox" checked> Show pending</label></div>
+      <div id="activity-chart" class="activity-chart"></div>
+      <p id="activity-detail" class="meta" aria-live="polite"></p>
+      <p id="activity-empty" class="note"></p>
+      <p class="note">Planning estimate from reservations only. Excludes walk-ins and pickup orders; shows arrivals, not guests currently seated.</p>
+      <p id="activity-connection" class="note"></p>
+      <details class="activity-table"><summary>View hourly numbers</summary><div id="activity-table"></div></details>
+    </section>
+    <section class="queue-header"><div><p class="eyebrow">THE LIVE FLOOR</p><h2 id="queue-title">All requests</h2></div><div class="header-controls"><button id="new-order" class="primary">+ New pickup order</button><button id="new-reservation" class="primary" hidden>+ New reservation</button></div><label class="search"><span class="sr-only">Search customer or request</span><input id="search" type="search" placeholder="Search name or request…"></label></section>
+    <div id="history-filters" class="history-filters" hidden role="group" aria-label="History type"><button type="button" class="secondary" data-history-type="order" aria-pressed="true">Pickup orders <span id="pickup-history-count">0</span></button><button type="button" class="secondary" data-history-type="reservation" aria-pressed="false">Reservations <span id="reservation-history-count">0</span></button></div>
+    <div class="queue-layout"><section id="queue" aria-label="Requests"></section><aside class="guide"><span class="guide-icon">↳</span><h3>A warm welcome<br>starts here.</h3><p>Review the details, set a realistic time, and let your guest know you’re on it.</p><hr><h4>Pickup service</h4><p><b>01</b> Review the incoming pickup request.</p><p><b>02</b> Set the pickup time and accept.</p><p><b>03</b> Mark ready, then collected.</p><div class="guide-note">Delivery stays with Skip and Uber Eats. This desk handles pickup and reservations. Phone calls and notifications are not connected yet.</div></aside></div>
+    <p id="notice" role="status" aria-live="polite"></p>
+  </main>
+  <dialog id="staff-accounts-dialog" aria-labelledby="staff-accounts-heading">
+    <p class="eyebrow">MANAGER / TEAM ACCESS</p><h2 id="staff-accounts-heading">Staff accounts</h2>
+    <p class="note">Each staff member uses a unique four-digit employee code and a three-digit PIN. Managers can manage staff accounts; staff can operate the service desk.</p>
+    <div id="staff-accounts-list"></div>
+    <form id="staff-pin-form" hidden><label>New 3-digit PIN<input name="pin" type="password" inputmode="numeric" pattern="[0-9]{3}" minlength="3" maxlength="3" required autocomplete="new-password"></label><button class="secondary" type="submit">Save new PIN</button></form>
+    <h3>Add staff member</h3><form id="staff-account-form">
+      <div class="customer-fields"><label>Name<input name="staffName" required maxlength="100" autocomplete="off"></label><label>4-digit employee code<input name="code" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" required autocomplete="off"></label><label>3-digit PIN<input name="pin" type="password" inputmode="numeric" pattern="[0-9]{3}" minlength="3" maxlength="3" required autocomplete="new-password"></label><label>Role<select name="role"><option value="staff">Staff</option><option value="manager">Manager</option></select></label></div>
+      <div class="dialog-actions"><button type="submit" class="primary">Add staff member</button></div>
+    </form><p id="staff-accounts-message" role="status"></p><div class="dialog-actions"><button id="close-staff-accounts" class="secondary">Done</button></div>
+  </dialog>
+  <dialog id="backup-dialog" aria-labelledby="backup-heading"><p class="eyebrow">WORKSPACE / RECOVERY</p><h2 id="backup-heading">Local backups</h2><p class="note">Automatic hourly copies of requests, settings, and the staff account. The latest 168 regular snapshots are kept in the project’s backups folder outside Docker’s data volume.</p><p id="backup-status" role="status"></p><button id="backup-now" class="primary">Back up now</button><h3>Recent snapshots</h3><div id="backup-list"></div><p class="note">These copies contain customer information and password hashes. Keep the folder private. They are on this computer, so copy them elsewhere for protection against a disk failure. Webhook secrets in .env are not included.</p><p class="note">Restoring requires stopping the backend and running the documented restore command. Current data is saved to a safety copy first.</p><div class="dialog-actions"><button id="close-backups" class="secondary">Done</button></div></dialog>
+  <dialog id="reservation-settings-dialog" aria-labelledby="reservation-settings-heading">
+    <form id="reservation-settings-form">
+      <p class="eyebrow">FRONT OF HOUSE / BOOKING RULES</p><h2 id="reservation-settings-heading">Reservation settings</h2>
+      <div class="customer-fields"><label>Total tables<input name="totalTables" type="number" min="1" max="500"></label><label>Keep for walk-ins<input name="walkInTables" type="number" min="0" max="500"></label></div>
+      <p class="note">Table duration: <strong>2 hours</strong>. Confirmed reservations are automatically cancelled if not marked arrived within <strong>15 minutes</strong>. Check guests in promptly.</p>
+      <h3>Reservation service hours</h3><button id="use-restaurant-hours" type="button" class="secondary">Use restaurant hours</button><p class="note">Default: Mon–Fri 11 AM–9 PM; Sat–Sun noon–9 PM. Latest two-hour reservation starts at 7 PM.</p><p class="note">The entire two-hour booking must finish before closing. Leave unknown days unconfigured. These are same-day windows; overnight service is not supported yet.</p>
+      <div id="reservation-hours"></div><p class="note">Capacity counts confirmed and arrived bookings during their two-hour windows. Pending requests do not hold tables. Walk-ins are protected by the table allowance rather than tracked individually.</p>
+      <p id="reservation-settings-error" role="alert"></p>
+      <div class="dialog-actions"><button id="close-reservation-settings" type="button" class="secondary">Cancel</button><button type="submit" class="primary">Save settings</button></div>
+    </form>
+  </dialog>
+  <dialog id="reservation-dialog" aria-labelledby="reservation-heading">
+    <form id="reservation-form">
+      <p class="eyebrow">FRONT OF HOUSE / PHONE BOOKING</p>
+      <h2 id="reservation-heading">New reservation</h2>
+      <p class="note">Record a reservation taken by staff. Dates and times are in Calgary local time. Check table availability before confirming.</p>
+      <div class="customer-fields">
+        <label>Customer name<input name="name" required maxlength="100" autocomplete="name"></label>
+        <label>Callback phone<input name="phone" type="tel" required maxlength="25" autocomplete="tel"></label>
+        <label>Date<input name="date" type="date" required></label>
+        <label>Time · Calgary<input name="time" type="time" required></label>
+        <label>Guests<input name="guests" type="number" min="1" max="30" step="1" value="2" required></label>
+        <label>Tables needed<input name="tableCount" type="number" min="1" max="500" step="1" value="1" required></label>
+        <label>Reservation status<select name="status"><option value="pending">Pending review</option><option value="confirmed">Confirmed by staff</option></select></label>
+      </div>
+      <label>Notes<textarea name="note" maxlength="1000" placeholder="Occasion, seating preferences, or other requests"></textarea></label>
+      <p id="reservation-capacity" class="note" role="status"></p>
+      <p id="reservation-error" role="alert"></p>
+      <div class="dialog-actions"><button id="cancel-reservation" class="secondary" type="button">Cancel</button><button id="save-reservation" class="primary" type="submit">Save reservation</button></div>
+    </form>
+  </dialog>
+  <dialog id="menu-dialog" aria-labelledby="menu-heading">
+    <p class="eyebrow">KITCHEN / AVAILABILITY</p><h2 id="menu-heading">Menu availability</h2>
+    <p class="note">Sold-out dishes are removed from new pickup orders. Existing orders stay unchanged. Changes stay in effect until you restore availability.</p>
+    <label>Find a dish<input id="availability-search" type="search" placeholder="Search dishes or categories…"></label>
+    <label class="availability-filter"><input id="sold-out-only" type="checkbox"> Show sold out only</label>
+    <p id="availability-summary" class="meta"></p><p id="availability-message" role="status"></p>
+    <div id="availability-list"></div>
+    <div class="dialog-actions"><button id="close-menu" class="secondary">Done</button></div>
+  </dialog>
+  <dialog id="order-dialog" aria-labelledby="order-heading">
+    <form id="order-form">
+      <p class="eyebrow">FRONT OF HOUSE / PICKUP</p>
+      <h2 id="order-heading">New pickup order</h2>
+      <p id="order-pickup-status" class="sold-out-text" role="status"></p>
+      <p class="note">Enter a test order for restaurant review. Payment and customer messages are not connected.</p>
+      <div class="customer-fields">
+        <label>Customer name<input name="customer" required maxlength="100" autocomplete="name"></label>
+        <label>Phone number<input name="phone" type="tel" required maxlength="25" autocomplete="tel"></label>
+      </div>
+      <label>Find a dish<input id="dish-search" type="search" placeholder="Search dishes or categories…"></label>
+      <div class="order-builder"><section id="dish-list" aria-label="Menu items"></section><section><h3>Your order</h3><div id="cart"></div><p class="total"><span>Subtotal before tax</span><strong id="cart-total">$0.00</strong></p><p class="note">Menu prices need restaurant approval before launch. Special requests require staff review.</p></section></div>
+      <label>Order notes<textarea name="notes" maxlength="1000" placeholder="Special requests or collection instructions"></textarea></label>
+      <p id="order-error" role="alert"></p>
+      <div class="dialog-actions"><button id="cancel-order" type="button" class="secondary">Cancel</button><button id="submit-order" type="submit" class="primary">Send for review</button></div>
+    </form>
+  </dialog>
+  <dialog id="decline-dialog"><form id="decline-form"><p class="eyebrow">REQUEST DECISION</p><h2>Decline request</h2><label>Reason for declining<textarea id="decline-reason" required maxlength="300" placeholder="For example: fully booked at the requested time"></textarea></label><div class="dialog-actions"><button type="button" id="cancel-decline" class="secondary">Go back</button><button class="danger" type="submit">Decline request</button></div></form></dialog>
+</body>
+</html>

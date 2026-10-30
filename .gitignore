@@ -1,0 +1,11 @@
+work/data/
+work/*.log
+work/store-test-*/
+work/github-source-manifest.json
+outputs/
+node_modules/
+.env
+.env.*
+!.env.example
+
+backups/
